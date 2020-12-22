@@ -1,0 +1,68 @@
+<!-- Just a bit of CSS styling -->
+<style>
+  table, td, th {border: 1px solid black; border-collapse: collapse;}
+</style>
+
+<div class="banner-info" align="center">
+    <span><label>Student Name </label></span>
+    <span><input id="inputStudentName" type="text" class="text-center" required="" placeholder="Enter Student Name"></span><br>
+    <span><label>Student RollNo</label></span>
+    <span><input id="inputStudentRollNo" type="text" class="text-center" required="" placeholder="Enter Student RollNo"></span><br>
+    <span><label>Course </label></span>
+    <span><input id="inputCourse" type="text" class="text-center" required=""></span><br>
+    <span><label>Semester </label></span>
+    <span><input id="inputSemester" type="text" class="text-center" required=""></span><br>
+    <span><label>Attendence Percentage </label></span>
+    <span><input id="inputAttendence" type="text" class="text-center" required=""></span><br>
+    <span><label>Aggregate Marks Percentage </label></span>
+    <span><input id="inputMarks" type="text" class="text-center" required=""></span><br>
+    <span><label>Annual Income </label></span>
+    <span><input id="inputAnnualIncome" type="text" class="text-center" required=""></span><br>    
+</div>
+<div class="logo">
+    <input type="button" onClick="insertData()" value="Add entry">
+</div>
+<script language="javascript">
+    function insertData() {
+        var Name = document.getElementById("inputStudentName").value;
+        var RollNo = document.getElementById("inputStudentRollNo").value;
+        var Course = document.getElementById("inputCourse").value;
+        var Semester = document.getElementById("inputSemester").value;
+        var Attendence = document.getElementById("inputAttendence").value;
+        var Marks = document.getElementById("inputMarks").value;
+        var AnnualIncome = document.getElementById("inputAnnualIncome").value;
+        document.getElementById("insertionPoint").innerHTML += "<tr><td>" + Name + "</td><td>" + RollNo + "</td><td>" + Course + "</td><td>" + Semester + "</td><td>" + Attendence + "</td><td>" + Marks + "</td><td>" + AnnualIncome + "</td></tr>";      
+        
+        document.getElementById("inputStudentName").value = "";
+        document.getElementById("inputStudentRollNo").value = "";
+        document.getElementById("inputCourse").value = "";
+        document.getElementById("inputSemester").value = "";
+        document.getElementById("inputAttendence").value = "";
+        document.getElementById("inputMarks").value = "";
+        document.getElementById("inputAnnualIncome").value = "";
+        
+    }
+</script>
+<table id="t1">
+    <caption>Student Table</caption>
+    <colgroup>
+        <col span="2" class="c2">
+        <col>
+        <col class="c1">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Student Roll No</th>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Attendence</th>
+            <th>Marks</th>
+            <th>Annual Income</th>
+            
+        </tr>
+    </thead>
+    <tbody id="insertionPoint">
+      
+    </tbody>
+</table>
